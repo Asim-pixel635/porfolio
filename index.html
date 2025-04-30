@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #B1A68B; /* Full page background */
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #A3B18A, #588157);
+      color: rgb(62, 53, 53);
+      padding: 2rem 1rem;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid rgb(46, 45, 45);
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      margin-bottom: 1rem;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .header-text {
+      flex: 1;
+      padding-left: 2rem;
+    }
+
+    .header-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-text p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #3A5A40;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar a {
+      padding: 1rem 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 1.1rem;
+    }
+
+    .navbar a:hover {
+      background: #344e41;
+      border-radius: 20px;
+      transform: scale(1.1);
+    }
+
+    /* Marquee Style */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #e3f2fd;
+      color: #3A5A40;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    .marquee p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Main container */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #8BB18C; /* Updated section background */
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    h2 {
+      color: #344e41;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      border-bottom: 2px solid #A3B18A;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+
+    .skill-list {
+      list-style: disc;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-left: 2rem;
+    }
+
+    .skill-list li {
+      background: #dcecc9;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .skill-list li:hover {
+      background-color: #A3B18A;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #3A5A40;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .header-text {
+        padding-left: 0;
+      }
+      .skill-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar {
+        flex-direction: column;
+      }
+      section {
+        transform: translateY(50px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <img src="profile pic.jpg" alt="Profile Photo" class="profile-photo">
+      <div class="header-text">
+        <h1>R Mohammed Asim</h1>
+        <p>Computer Science Student | Web Developer | AI Enthusiast</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="marquee">
+    <p>Welcome to my Portfolio! 🚀 Exploring Web Development | AI Enthusiast | Software Engineer</p>
+  </div>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I am a passionate Computer Science student with an interest in web development, AI, and software engineering.</p>
+      <p>I love working in teams, leading projects, and building products that make a positive difference.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech in Computer Science - Presidency University (2022-2026)</li>
+        <li>Intermediate - Narayana Junior College (2019-2021)</li>
+        <li>High School - Sri Chaitanya Techno School</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>React.js</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <section id="languages">
+      <h2>Languages</h2>
+      <ul>
+        <li>English</li>
+        <li>Hindi</li>
+        <li>Telugu</li>
+      </ul>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Web Development - Coursera</li>
+        <li>Python for Everybody - Udemy</li>
+        <li>DSA using Java - CodeChef</li>
+        <li>CSS - HackerRank</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>Portfolio Website</li>
+        <li>Movie Ticket Booking Website</li>
+        <li>Nutrition Tracker</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Address: #30, Aditya Nagar, Vidyaranyapura, Bangalore, India</p>
+      <p>Email: asimasim85593@gmail.com</p>
+      <p>Phone: +91 6303338280</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 R Mohammed Asim</p>
+  </footer>
+
+  <script>
+    // Slide-in Animation on Scroll
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight * 0.8;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom) {
+          section.classList.add('show');
+        } else {
+          section.classList.remove('show');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
